@@ -8,5 +8,11 @@ pipeline {
         checkout scm
       }
     }
+    stage('Build Docker Image') {
+      steps {
+        echo 'Building Docker Image'
+        bat 'docker build -t hello .'
+      }
+    }
   }
 }  
